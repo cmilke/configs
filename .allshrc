@@ -1,0 +1,9 @@
+
+#remote server addresses
+alias Clear='for i in $(seq 100); do echo; done; clear'
+
+export SLAC=rhel6-64.slac.stanford.edu
+export ATLAS=atlas04-10g.ucsc.edu
+export UCSC=unix.ucsc.edu
+export ADAP=adap.ucsc.edu
+export SMU=compute.physics.smu.edu
