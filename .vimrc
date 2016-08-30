@@ -27,7 +27,7 @@ set wildmenu
 set wildmode=list:longest
 noremap <LEADER>/ :set hlsearch!<CR>
 noremap <LEADER>s :setlocal spell! spelllang=en_us<CR>
-noremap <LEADER>x :w<CR>:!latexmk -pdf %<CR>
+noremap <LEADER>x :w<CR>:!pdflatex %<CR>
 
 nnoremap j gj
 nnoremap k gk
