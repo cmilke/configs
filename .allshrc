@@ -25,3 +25,4 @@ export ATLAS=atlas04.ucsc.edu
 export UCSC=unix.ucsc.edu
 export ADAP=adap.ucsc.edu
 export SMU=compute.physics.smu.edu
+export MANEFRAME=mflogin01.hpc.smu.edu
