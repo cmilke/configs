@@ -4,7 +4,7 @@
 "fundamental configuration"
 """""""""""""""""""""""""""
 
-inoremap jj <ESC>
+inoremap jk <ESC>
 inoremap # <SPACE><BACKSPACE>#
 
 
@@ -25,6 +25,7 @@ autocmd FileType plaintex setlocal wrap linebreak breakindent norelativenumber d
 set laststatus=2
 set wildmenu
 set wildmode=list:longest
+set nohlsearch
 noremap <LEADER>/ :set hlsearch!<CR>
 noremap <LEADER>s :setlocal spell! spelllang=en_us<CR>
 noremap <LEADER>x :w<CR>:!pdflatex %<CR>
