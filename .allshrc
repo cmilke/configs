@@ -17,6 +17,8 @@ fi
 
 #Some convenient aliases
 alias Clear='for i in $(seq 100); do echo; done; clear'
+alias cmilkesetupgit='git config --global user.email "chrisdmilke@gmail.com"\
+ git config --global user.name "Chris Milke"'
 
 
 #remote server addresses
