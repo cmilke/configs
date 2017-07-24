@@ -29,6 +29,7 @@ set nohlsearch
 noremap <LEADER>/ :set hlsearch!<CR>
 noremap <LEADER>s :setlocal spell! spelllang=en_us<CR>
 noremap <LEADER>x :w<CR>:!pdflatex %<CR>
+noremap <LEADER><SPACE> i <ESC>
 
 nnoremap j gj
 nnoremap k gk
