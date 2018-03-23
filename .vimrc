@@ -52,9 +52,7 @@ nnoremap <LEADER><S-L> :belowright vertical split
 
 
 "buffer switching
-nnoremap <F6> :buffer 
-nnoremap <F7> :bprevious<CR>
-nnoremap <F8> :bnext<CR>
+nnoremap <LEADER>b :buffers<CR>:b  
 
 "turns tabs into spaces and sets shiftwidth
 let g:my_shift_size = 4
