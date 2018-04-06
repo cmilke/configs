@@ -49,10 +49,10 @@ nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer
 nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
 nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
 nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
-"nnoremap <LEADER><S-J> :belowright split 
-"nnoremap <LEADER><S-K> :aboveleft split 
-"nnoremap <LEADER><S-H> :aboveleft vertical split 
-"nnoremap <LEADER><S-L> :belowright vertical split 
+nnoremap <LEADER>nj :belowright split 
+nnoremap <LEADER>nk :aboveleft split 
+nnoremap <LEADER>nh :aboveleft vertical split 
+nnoremap <LEADER>nl :belowright vertical split 
 
 
 "buffer switching
