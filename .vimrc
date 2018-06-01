@@ -18,9 +18,7 @@ syntax on
 colo landscape
 
 set hidden showcmd nowrap
-autocmd FileType text setlocal wrap linebreak breakindent norelativenumber display+=lastline
-autocmd FileType tex setlocal wrap linebreak breakindent norelativenumber display+=lastline
-autocmd FileType plaintex setlocal wrap linebreak breakindent norelativenumber display+=lastline
+"autocmd FileType tex setlocal wrap linebreak breakindent norelativenumber display+=lastline
 
 set laststatus=2
 set wildmenu
