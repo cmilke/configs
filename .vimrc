@@ -15,7 +15,7 @@ let mapleader = "\<SPACE>"
 "colorscheme options
 set t_Co=256
 syntax on
-colo landscape
+colo mustang
 
 set hidden showcmd nowrap
 "autocmd FileType tex setlocal wrap linebreak breakindent norelativenumber display+=lastline
@@ -57,7 +57,7 @@ nnoremap <LEADER>nl :belowright vertical split
 nnoremap <LEADER>b :buffers<CR>:b  
 
 "turns tabs into spaces and sets shiftwidth
-let g:my_shift_size=8
+let g:my_shift_size=4
 
 let &tabstop=g:my_shift_size
 let &shiftwidth=g:my_shift_size
