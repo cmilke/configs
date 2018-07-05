@@ -66,6 +66,24 @@ set expandtab
 set smartindent
 autocmd FileType make setlocal noexpandtab "special command for makefiles that makes tabs actual tabs
 
+function Set_shift(n)
+    let g:my_shift_size = a:n
+    let &tabstop=g:my_shift_size
+    let &shiftwidth=g:my_shift_size
+    let &softtabstop=g:my_shift_size
+endfunction
+nnoremap <LEADER>== :call Set_shift(g:my_shift_size)<CR>
+nnoremap <LEADER>=1 :call Set_shift(1)<CR>
+nnoremap <LEADER>=2 :call Set_shift(2)<CR>
+nnoremap <LEADER>=3 :call Set_shift(3)<CR>
+nnoremap <LEADER>=4 :call Set_shift(4)<CR>
+nnoremap <LEADER>=5 :call Set_shift(5)<CR>
+nnoremap <LEADER>=6 :call Set_shift(5)<CR>
+nnoremap <LEADER>=7 :call Set_shift(5)<CR>
+nnoremap <LEADER>=8 :call Set_shift(5)<CR>
+
+
+
 
 "fold control
 function Fold_file()
