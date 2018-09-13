@@ -58,6 +58,7 @@ nnoremap <LEADER>nj :belowright split
 nnoremap <LEADER>nk :aboveleft split 
 nnoremap <LEADER>nh :aboveleft vertical split 
 nnoremap <LEADER>nl :belowright vertical split 
+nnoremap <LEADER>nn :e 
 
 
 "buffer switching
