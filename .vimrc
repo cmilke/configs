@@ -15,13 +15,15 @@ let mapleader = "\<SPACE>"
 "colorscheme options
 set t_Co=256
 syntax on
-colo mustang
 if &term =~ '256color'
   " disable Background Color Erase (BCE) so that color schemes
   " render properly when inside 256-color tmux and GNU screen.
   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+colo mustang
+autocmd BufEnter * colo mustang
+autocmd BufEnter *.py colo industry
 
 
 set hidden showcmd nowrap
