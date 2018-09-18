@@ -21,10 +21,7 @@ if &term =~ '256color'
   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
-colo mustang
-autocmd BufEnter * colo mustang
-autocmd BufEnter *.py colo industry
-
+colo industry
 
 set hidden showcmd nowrap
 "autocmd FileType tex setlocal wrap linebreak breakindent norelativenumber display+=lastline
