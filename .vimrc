@@ -25,6 +25,7 @@ colo industry
 
 set hidden showcmd nowrap
 autocmd FileType tex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
+autocmd FileType txt setlocal wrap linebreak breakindent 
 
 set laststatus=2
 set wildmenu
