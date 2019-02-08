@@ -24,7 +24,8 @@ endif
 colo industry
 
 set hidden showcmd nowrap
-"autocmd FileType tex setlocal wrap linebreak breakindent norelativenumber display+=lastline
+autocmd FileType tex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
+autocmd FileType txt setlocal wrap linebreak breakindent 
 
 set laststatus=2
 set wildmenu
@@ -32,7 +33,6 @@ set wildmode=list:longest
 set nohlsearch
 noremap <LEADER>/ :set hlsearch!<CR>
 noremap <LEADER>s :setlocal spell! spelllang=en_us<CR>
-noremap <LEADER>x :w<CR>:!pdflatex %<CR>
 noremap <LEADER><SPACE> i <ESC>
 
 nnoremap j gj
