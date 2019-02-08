@@ -59,6 +59,9 @@ nnoremap <LEADER>nh :aboveleft vertical split
 nnoremap <LEADER>nl :belowright vertical split 
 nnoremap <LEADER>nn :e 
 
+"mark listing
+nnoremap <LEADER>m :marks<CR>
+
 
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
