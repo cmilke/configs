@@ -31,7 +31,8 @@ cmilkesetupgit() {
 
 
 #remote server addresses
-export SLAC='rhel6-64.slac.stanford.edu'
+#export SLAC='rhel6-64.slac.stanford.edu'
+export SLAC='atlint03.slac.stanford.edu'
 export ATLAS='atlas04.ucsc.edu'
 export UCSC='unix.ucsc.edu'
 export ADAP='adap.ucsc.edu'
