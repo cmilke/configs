@@ -93,17 +93,16 @@ nnoremap <LEADER>=7 :call Set_shift(5)<CR>
 nnoremap <LEADER>=8 :call Set_shift(5)<CR>
 
 
-
-
 "fold control
 function Fold_file()
-        set foldmethod=indent
-        set foldcolumn=4
-        set foldenable
-        endfunction
-        nnoremap <LEADER>_ :call Fold_file()<CR>
+    set foldmethod=indent
+    set foldcolumn=4
+    set foldenable
+endfunction
+nnoremap <LEADER>_ :call Fold_file()<CR>
+
 function Unfold_file()
-        set foldcolumn=0
-        set nofoldenable
-        endfunction
-        nnoremap <LEADER>- :call Unfold_file()<CR>
+    set foldcolumn=0
+    set nofoldenable
+endfunction
+nnoremap <LEADER>- :call Unfold_file()<CR>
