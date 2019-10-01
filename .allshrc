@@ -42,3 +42,5 @@ export MANEFRAME='m2.smu.edu'
 export CERN='lxplus.cern.ch'
 export CERN6='lxplus6.cern.ch'
 export LARRY='ppa-pc90513'
+
+export EDITOR=vim
