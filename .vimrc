@@ -16,9 +16,9 @@ if &term =~ '256color'
 endif
 colo industry
 
-set hidden showcmd nowrap
-autocmd FileType tex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
-autocmd FileType txt setlocal wrap linebreak breakindent 
+setlocal hidden showcmd nowrap
+autocmd FileType plaintex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
+autocmd FileType text setlocal wrap linebreak breakindent 
 
 set laststatus=2
 set wildmenu
