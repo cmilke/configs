@@ -47,6 +47,9 @@ nnoremap <LEADER>nh :aboveleft vertical split
 nnoremap <LEADER>nl :belowright vertical split 
 nnoremap <LEADER>nn :e 
 
+"paste mode
+nnoremap <LEADER>p :set paste!<CR>  
+
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
 nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
