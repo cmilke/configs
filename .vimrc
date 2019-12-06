@@ -1,12 +1,5 @@
-"A file to configure my default settings for vim
-
-"""""""""""""""""""""""""""
-"fundamental configuration"
-"""""""""""""""""""""""""""
-
 inoremap jk <ESC>
 inoremap # <SPACE><BACKSPACE>#
-
 
 "change leader key to space
 nnoremap  <SPACE> <NOP>
@@ -38,7 +31,6 @@ noremap <LEADER><SPACE> i <ESC>
 nnoremap j gj
 nnoremap k gk
 
-
 "tab usage
 nnoremap <F2> :tabe 
 nnoremap <F3> :tabp<CR>
@@ -49,22 +41,22 @@ nnoremap <LEADER>j <C-W>j
 nnoremap <LEADER>k <C-W>k
 nnoremap <LEADER>h <C-W>h
 nnoremap <LEADER>l <C-W>l
-nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
-nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
-nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
-nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
 nnoremap <LEADER>nj :belowright split 
 nnoremap <LEADER>nk :aboveleft split 
 nnoremap <LEADER>nh :aboveleft vertical split 
 nnoremap <LEADER>nl :belowright vertical split 
 nnoremap <LEADER>nn :e 
 
-"mark listing
-nnoremap <LEADER>m :marks<CR>
-
-
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
+nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
+nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
+nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
+nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
+
+"Lock and unlock vertical scrolling
+nnoremap <LEADER>c :windo set scrollbind<CR>
+nnoremap <LEADER>C :windo set noscrollbind<CR>
 
 "turns tabs into spaces and sets shiftwidth
 let g:my_shift_size=4
@@ -91,7 +83,6 @@ nnoremap <LEADER>=5 :call Set_shift(5)<CR>
 nnoremap <LEADER>=6 :call Set_shift(5)<CR>
 nnoremap <LEADER>=7 :call Set_shift(5)<CR>
 nnoremap <LEADER>=8 :call Set_shift(5)<CR>
-
 
 "fold control
 function Fold_file()
