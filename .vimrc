@@ -50,6 +50,9 @@ nnoremap <LEADER>nn :e
 "paste mode
 nnoremap <LEADER>p :set paste!<CR>  
 
+"quick make
+nnoremap <LEADER>m :!make<CR>  
+
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
 nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
