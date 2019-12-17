@@ -32,9 +32,9 @@ nnoremap j gj
 nnoremap k gk
 
 "tab usage
-nnoremap <LEADER><F2> :buffers<CR>:tab sbuffer 
-nnoremap <LEADER><F3> :tabp<CR>
-nnoremap <LEADER><F4> :tabn<CR>
+nnoremap <F2> :buffers<CR>:tab sbuffer 
+nnoremap <F3> :tabp<CR>
+nnoremap <F4> :tabn<CR>
 
 "window switching
 nnoremap <LEADER>j <C-W>j
