@@ -32,9 +32,10 @@ nnoremap j gj
 nnoremap k gk
 
 "tab usage
-nnoremap <LEADER><F2> :buffers<CR>:tab sbuffer 
-nnoremap <LEADER><F3> :tabp<CR>
-nnoremap <LEADER><F4> :tabn<CR>
+nnoremap <LEADER>T :buffers<CR>:tab sbuffer 
+nnoremap <LEADER>nt :tabe 
+nnoremap <C-k> :tabp<CR>
+nnoremap <C-j> :tabn<CR>
 
 "window switching
 nnoremap <LEADER>j <C-W>j
@@ -51,7 +52,7 @@ nnoremap <LEADER>nn :e
 nnoremap <LEADER>p :set paste!<CR>  
 
 "quick make
-nnoremap <LEADER>m :!make<CR>  
+nnoremap <LEADER>m :wa<CR>:!make
 
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
@@ -59,6 +60,8 @@ nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer
 nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
 nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
 nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
 
 "Lock and unlock vertical scrolling
 nnoremap <LEADER>c :windo set scrollbind<CR>
