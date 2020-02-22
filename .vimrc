@@ -1,12 +1,5 @@
-"A file to configure my default settings for vim
-
-"""""""""""""""""""""""""""
-"fundamental configuration"
-"""""""""""""""""""""""""""
-
 inoremap jk <ESC>
 inoremap # <SPACE><BACKSPACE>#
-
 
 "change leader key to space
 nnoremap  <SPACE> <NOP>
@@ -24,7 +17,7 @@ endif
 colo industry
 
 set hidden showcmd nowrap
-autocmd FileType tex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
+autocmd FileType plaintex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
 autocmd FileType text setlocal wrap linebreak breakindent 
 
 set laststatus=2
@@ -38,33 +31,41 @@ noremap <LEADER><SPACE> i <ESC>
 nnoremap j gj
 nnoremap k gk
 
-
 "tab usage
-nnoremap <F2> :tabe 
-nnoremap <F3> :tabp<CR>
-nnoremap <F4> :tabn<CR>
+nnoremap <LEADER>T :buffers<CR>:tab sbuffer 
+nnoremap <LEADER>nt :tabe 
+nnoremap <C-k> :tabp<CR>
+nnoremap <C-j> :tabn<CR>
 
 "window switching
 nnoremap <LEADER>j <C-W>j
 nnoremap <LEADER>k <C-W>k
 nnoremap <LEADER>h <C-W>h
 nnoremap <LEADER>l <C-W>l
-nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
-nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
-nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
-nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
 nnoremap <LEADER>nj :belowright split 
 nnoremap <LEADER>nk :aboveleft split 
 nnoremap <LEADER>nh :aboveleft vertical split 
 nnoremap <LEADER>nl :belowright vertical split 
 nnoremap <LEADER>nn :e 
 
-"mark listing
-nnoremap <LEADER>m :marks<CR>
+"paste mode
+nnoremap <LEADER>p :set paste!<CR>  
 
+"quick make
+nnoremap <LEADER>m :wa<CR>:!make
 
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
+nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
+nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
+nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
+nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
+
+"Lock and unlock vertical scrolling
+nnoremap <LEADER>c :windo set scrollbind<CR>
+nnoremap <LEADER>C :windo set noscrollbind<CR>
 
 "turns tabs into spaces and sets shiftwidth
 let g:my_shift_size=4
@@ -92,18 +93,16 @@ nnoremap <LEADER>=6 :call Set_shift(5)<CR>
 nnoremap <LEADER>=7 :call Set_shift(5)<CR>
 nnoremap <LEADER>=8 :call Set_shift(5)<CR>
 
-
-
-
 "fold control
 function Fold_file()
-        set foldmethod=indent
-        set foldcolumn=4
-        set foldenable
-        endfunction
-        nnoremap <LEADER>_ :call Fold_file()<CR>
+    set foldmethod=indent
+    set foldcolumn=4
+    set foldenable
+endfunction
+nnoremap <LEADER>_ :call Fold_file()<CR>
+
 function Unfold_file()
-        set foldcolumn=0
-        set nofoldenable
-        endfunction
-        nnoremap <LEADER>- :call Unfold_file()<CR>
+    set foldcolumn=0
+    set nofoldenable
+endfunction
+nnoremap <LEADER>- :call Unfold_file()<CR>
