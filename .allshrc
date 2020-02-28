@@ -43,4 +43,29 @@ export CERN='lxplus.cern.ch'
 export CERN6='lxplus6.cern.ch'
 export LARRY='ppa-pc90513'
 
+alias mane="ssh -Y $MANEFRAME"
+alias manereboot='cd && manefs && manefs && cd -'
+alias manekill="ps -f -u cmilke | grep sshfs | grep maneframe | awk '{print $2}'"
+alias slac="sshpass -f $HOME/.ssh/.slac ssh -YC\
+    -c aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr\
+    $SLAC"
+alias cern0="sshpass -f $HOME/.ssh/.cern ssh -YC $CERN"
+alias cern="sshpass -f $HOME/.ssh/.cern ssh -YC $CERN6"
+
 export EDITOR=vim
+
+remotelink() {
+    mntpoint="/mnt/sshfs/$1"
+    if (( $# == 2 )) && [[ $2 == 'kill' ]]; then
+        pkill -9 sshfs &&
+        fusermount3 -u $mntpoint
+    elif [[ -z $(ls $mntpoint) ]]; then
+        if [[ $1 == 'slac' ]]; then
+            cat $HOME/.ssh/.slac | sshfs -o password_stdin $SLAC:/nfs/slac/g/atlas/u02/cmilke/vbf_selection $mntpoint &&
+            echo "Mounted $SLAC"
+        fi
+    else
+        fusermount3 -u $mntpoint &&
+        echo "Unmounted $mntpoint"
+    fi
+}
