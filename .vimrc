@@ -34,8 +34,8 @@ nnoremap k gk
 "tab usage
 nnoremap <LEADER>T :buffers<CR>:tab sbuffer 
 nnoremap <LEADER>nt :tabe 
-nnoremap <C-k> :tabp<CR>
-nnoremap <C-j> :tabn<CR>
+nnoremap <C-h> :tabp<CR>
+nnoremap <C-l> :tabn<CR>
 
 "window switching
 nnoremap <LEADER>j <C-W>j
@@ -60,8 +60,8 @@ nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer
 nnoremap <LEADER><S-K> :buffers<CR>:aboveleft sbuffer 
 nnoremap <LEADER><S-H> :buffers<CR>:aboveleft vertical sbuffer 
 nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer 
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprevious<CR>
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprevious<CR>
 
 "Lock and unlock vertical scrolling
 nnoremap <LEADER>c :windo set scrollbind<CR>
