@@ -16,7 +16,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 function zathura_quick_open {
     zathura "$1" & disown;
-    exit;
 }
 
 alias zz='zathura_quick_open'
@@ -63,6 +62,11 @@ remotelink() {
         if [[ $1 == 'slac' ]]; then
             cat $HOME/.ssh/.slac | sshfs -o password_stdin $SLAC:/nfs/slac/g/atlas/u02/cmilke/vbf_selection $mntpoint &&
             echo "Mounted $SLAC"
+        fi
+
+        if [[ $1 == 'mane' ]]; then
+            sshfs $MANEFRAME:/scratch/users/cmilke $mntpoint &&
+            echo "Mounted $MANEFRAME"
         fi
     else
         fusermount3 -u $mntpoint &&
