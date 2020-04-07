@@ -31,7 +31,8 @@ cmilkesetupgit() {
 
 #remote server addresses
 #export SLAC='rhel6-64.slac.stanford.edu'
-export SLAC='atlint03.slac.stanford.edu'
+#export SLAC='atlint03.slac.stanford.edu'
+export SLAC='centos7.slac.stanford.edu'
 export ATLAS='atlas04.ucsc.edu'
 export UCSC='unix.ucsc.edu'
 export ADAP='adap.ucsc.edu'
@@ -60,12 +61,12 @@ remotelink() {
         fusermount3 -u $mntpoint
     elif [[ -z $(ls $mntpoint) ]]; then
         if [[ $1 == 'slac' ]]; then
-            cat $HOME/.ssh/.slac | sshfs -o password_stdin $SLAC:/nfs/slac/g/atlas/u02/cmilke/vbf_selection $mntpoint &&
+            cat $HOME/.ssh/.slac | sshfs -o password_stdin -o follow_symlinks $SLAC:/nfs/slac/g/atlas/u02/cmilke $mntpoint &&
             echo "Mounted $SLAC"
         fi
 
         if [[ $1 == 'mane' ]]; then
-            sshfs $MANEFRAME:/scratch/users/cmilke $mntpoint &&
+            sshfs -o follow_symlinks $MANEFRAME:/scratch/users/cmilke $mntpoint &&
             echo "Mounted $MANEFRAME"
         fi
     else
