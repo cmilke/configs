@@ -38,6 +38,7 @@ nnoremap <LEADER>nt :tabe
 nnoremap <C-h> :tabp<CR>
 nnoremap <C-l> :tabn<CR>
 
+set autochdir
 "window switching
 nnoremap <LEADER>j <C-W>j
 nnoremap <LEADER>k <C-W>k
