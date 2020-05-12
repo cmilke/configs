@@ -43,7 +43,9 @@ export CERN='lxplus.cern.ch'
 export CERN6='lxplus6.cern.ch'
 export LARRY='ppa-pc90513'
 
-alias mane="ssh -Y $MANEFRAME"
+alias mane="ssh -YC \
+    -c aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr\
+    $MANEFRAME"
 alias manereboot='cd && manefs && manefs && cd -'
 alias manekill="ps -f -u cmilke | grep sshfs | grep maneframe | awk '{print $2}'"
 alias slac="sshpass -f $HOME/.ssh/.slac ssh -YC\
@@ -66,7 +68,7 @@ remotelink() {
         fi
 
         if [[ $1 == 'mane' ]]; then
-            sshfs -o follow_symlinks $MANEFRAME:/scratch/users/cmilke $mntpoint &&
+            sshfs -o follow_symlinks $MANEFRAME:/users/cmilke $mntpoint &&
             echo "Mounted $MANEFRAME"
         fi
     else
