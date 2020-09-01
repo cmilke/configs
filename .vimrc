@@ -56,6 +56,9 @@ nnoremap <LEADER>p :set paste!<CR>
 "quick make
 nnoremap <LEADER>m :wa<CR>:!make
 
+"quick remote git syncing
+nnoremap <LEADER>G :!gitsync<CR>
+
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
 nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
@@ -108,3 +111,7 @@ function Unfold_file()
     set nofoldenable
 endfunction
 nnoremap <LEADER>- :call Unfold_file()<CR>
+
+"Syntastic options for systems that have it
+let g:syntastic_cpp_checkers = []
+let g:syntastic_tex_checkers = []

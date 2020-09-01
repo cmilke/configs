@@ -63,12 +63,12 @@ remotelink() {
         fusermount3 -u $mntpoint
     elif [[ -z $(ls $mntpoint) ]]; then
         if [[ $1 == 'slac' ]]; then
-            cat $HOME/.ssh/.slac | sshfs -o password_stdin -o follow_symlinks $SLAC:/nfs/slac/g/atlas/u02/cmilke $mntpoint &&
+            cat $HOME/.ssh/.slac | sshfs -o reconnect -o password_stdin -o follow_symlinks $SLAC:/nfs/slac/g/atlas/u02/cmilke $mntpoint &&
             echo "Mounted $SLAC"
         fi
 
         if [[ $1 == 'mane' ]]; then
-            sshfs -o follow_symlinks $MANEFRAME:/users/cmilke $mntpoint &&
+            sshfs -o reconnect -o follow_symlinks $MANEFRAME:/users/cmilke $mntpoint &&
             echo "Mounted $MANEFRAME"
         fi
     else
