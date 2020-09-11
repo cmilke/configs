@@ -39,6 +39,7 @@ export ADAP='adap.ucsc.edu'
 export SMU='compute.physics.smu.edu'
 export MANEFRAME1='mflogin01.hpc.smu.edu'
 export MANEFRAME='m2.smu.edu'
+export CURIE='curie.physics.smu.edu'
 export CERN='lxplus.cern.ch'
 export CERN6='lxplus6.cern.ch'
 export LARRY='ppa-pc90513'
@@ -46,6 +47,7 @@ export LARRY='ppa-pc90513'
 alias mane="ssh -YC \
     -c aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr\
     $MANEFRAME"
+alias curie="ssh $CURIE"
 alias manereboot='cd && manefs && manefs && cd -'
 alias manekill="ps -f -u cmilke | grep sshfs | grep maneframe | awk '{print $2}'"
 alias slac="sshpass -f $HOME/.ssh/.slac ssh -YC\
