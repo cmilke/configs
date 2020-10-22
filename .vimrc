@@ -72,31 +72,7 @@ nnoremap <C-k> :bprevious<CR>
 nnoremap <LEADER>c :windo set scrollbind<CR>
 nnoremap <LEADER>C :windo set noscrollbind<CR>
 
-"turns tabs into spaces and sets shiftwidth
-let g:my_shift_size=4
-
-let &tabstop=g:my_shift_size
-let &shiftwidth=g:my_shift_size
-let &softtabstop=g:my_shift_size
-set expandtab
-set smartindent
-autocmd FileType make setlocal noexpandtab "special command for makefiles that makes tabs actual tabs
-
-function Set_shift(n)
-    let g:my_shift_size = a:n
-    let &tabstop=g:my_shift_size
-    let &shiftwidth=g:my_shift_size
-    let &softtabstop=g:my_shift_size
-endfunction
-nnoremap <LEADER>== :call Set_shift(g:my_shift_size)<CR>
-nnoremap <LEADER>=1 :call Set_shift(1)<CR>
-nnoremap <LEADER>=2 :call Set_shift(2)<CR>
-nnoremap <LEADER>=3 :call Set_shift(3)<CR>
-nnoremap <LEADER>=4 :call Set_shift(4)<CR>
-nnoremap <LEADER>=5 :call Set_shift(5)<CR>
-nnoremap <LEADER>=6 :call Set_shift(5)<CR>
-nnoremap <LEADER>=7 :call Set_shift(5)<CR>
-nnoremap <LEADER>=8 :call Set_shift(5)<CR>
+"autocmd FileType make setlocal noexpandtab "special command for makefiles that makes tabs actual tabs
 
 "fold control
 function Fold_file()
@@ -111,7 +87,3 @@ function Unfold_file()
     set nofoldenable
 endfunction
 nnoremap <LEADER>- :call Unfold_file()<CR>
-
-"Syntastic options for systems that have it
-let g:syntastic_cpp_checkers = []
-let g:syntastic_tex_checkers = []
