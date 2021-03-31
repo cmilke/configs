@@ -38,7 +38,9 @@ nnoremap <LEADER>nt :tabe
 nnoremap <C-h> :tabp<CR>
 nnoremap <C-l> :tabn<CR>
 
+"set current dir to that of the current buffer
 set autochdir
+
 "window switching
 nnoremap <LEADER>j <C-W>j
 nnoremap <LEADER>k <C-W>k
@@ -49,6 +51,8 @@ nnoremap <LEADER>nk :aboveleft split
 nnoremap <LEADER>nh :aboveleft vertical split 
 nnoremap <LEADER>nl :belowright vertical split 
 nnoremap <LEADER>nn :e 
+"Set windows to auto-scale with terminal resize
+autocmd VimResized * wincmd = 
 
 "paste mode
 nnoremap <LEADER>p :set paste!<CR>  
