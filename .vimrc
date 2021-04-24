@@ -20,6 +20,7 @@ set hidden showcmd nowrap
 autocmd FileType tex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
 autocmd FileType plaintex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
 autocmd FileType text setlocal wrap linebreak breakindent 
+filetype plugin on
 
 set laststatus=2
 set wildmenu
