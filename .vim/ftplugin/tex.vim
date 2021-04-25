@@ -1,1 +1,1 @@
-colorscheme jellyx
+colorscheme mustang

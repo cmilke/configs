@@ -27,7 +27,6 @@ set wildmenu
 set wildmode=list:longest
 set nohlsearch
 noremap <LEADER>/ :set hlsearch!<CR>
-noremap <LEADER>s :setlocal spell! spelllang=en_us<CR>
 noremap <LEADER><SPACE> i <ESC>
 
 nnoremap j gj
