@@ -7,7 +7,7 @@ echo 1; sleep 1;
 config_dir=$PWD
 cd $HOME
 rm -r .vim  .vimrc .tmux.conf &> /dev/null
-files_to_link='.allshrc  .tmux.conf  .vim  .vimrc'
+files_to_link='.allshrc  .tmux.conf  .vim  .vimrc .ctags'
 for f in $files_to_link; do
     ln -s ${config_dir}/$f .
 done

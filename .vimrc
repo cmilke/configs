@@ -20,7 +20,7 @@ set hidden showcmd nowrap
 autocmd FileType tex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
 autocmd FileType plaintex setlocal wrap linebreak breakindent "norelativenumber display+=lastline
 autocmd FileType text setlocal wrap linebreak breakindent 
-filetype plugin on
+filetype plugin indent on
 
 set laststatus=2
 set wildmenu
@@ -60,9 +60,6 @@ nnoremap <LEADER>p :set paste!<CR>
 "quick make
 nnoremap <LEADER>m :wa<CR>:!make
 
-"quick remote git syncing
-nnoremap <LEADER>G :!gitsync<CR>
-
 "buffer switching
 nnoremap <LEADER>b :buffers<CR>:b  
 nnoremap <LEADER><S-J> :buffers<CR>:belowright sbuffer 
@@ -72,11 +69,38 @@ nnoremap <LEADER><S-L> :buffers<CR>:belowright vertical sbuffer
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 
+"tag jumping
+nnoremap <LEADER>ij :belowright split<CR><C-]>
+nnoremap <LEADER>ik :aboveleft split<CR><C-]>
+nnoremap <LEADER>ih :aboveleft vertical split<CR><C-]>
+nnoremap <LEADER>il :belowright vertical split<CR><C-]>
+
 "Lock and unlock vertical scrolling
 nnoremap <LEADER>c :windo set scrollbind<CR>
 nnoremap <LEADER>C :windo set noscrollbind<CR>
 
-"autocmd FileType make setlocal noexpandtab "special command for makefiles that makes tabs actual tabs
+"turns tabs into spaces and sets shiftwidth to my preferred default
+function Set_shift(n)
+    let g:my_shift_size = a:n
+    let &shiftwidth=g:my_shift_size
+    let &tabstop=g:my_shift_size
+    let &softtabstop=g:my_shift_size
+endfunction
+nnoremap <LEADER>=1 :call Set_shift(1)<CR>
+nnoremap <LEADER>=2 :call Set_shift(2)<CR>
+nnoremap <LEADER>=3 :call Set_shift(3)<CR>
+nnoremap <LEADER>=4 :call Set_shift(4)<CR>
+nnoremap <LEADER>=5 :call Set_shift(5)<CR>
+nnoremap <LEADER>=6 :call Set_shift(6)<CR>
+nnoremap <LEADER>=7 :call Set_shift(7)<CR>
+nnoremap <LEADER>=8 :call Set_shift(8)<CR>
+nnoremap <LEADER>=9 :call Set_shift(9)<CR>
+nnoremap <LEADER>=- :set expandtab!<CR>
+set autoindent
+if !exists("g:my_shift_size")
+    set expandtab
+    call Set_shift(4)
+endif
 
 "fold control
 function Fold_file()
